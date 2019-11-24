@@ -13,7 +13,7 @@ server.bind((host_adress , port_number))
 server.listen(2)
 
 #waiting for client
-i = 0
+
 while True: 
 
     """ 
