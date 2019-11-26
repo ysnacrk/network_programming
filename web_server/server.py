@@ -4,10 +4,19 @@ from threading import Thread
 
 """
 -------WEB SERVER ARCHITECTURE-------
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b9481b67a957be6d83c2b38b810743399e0a61a
 -Server create socket and listen given port
 -Client create socket and connect the server's port (our browser doing for us)
 -Server get connection request and create thread , get the message by recv function and parsing with split function
 -Server create a http response and send then close connection because client can waiting response forever 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6b9481b67a957be6d83c2b38b810743399e0a61a
 """
 class WebServer:
 
@@ -57,3 +66,8 @@ class WebServer:
 if __name__ == '__main__':
     server = WebServer()
     server.run_server('192.168.1.28' , 8000)
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> 6b9481b67a957be6d83c2b38b810743399e0a61a
