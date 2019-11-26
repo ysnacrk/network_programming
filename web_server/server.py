@@ -29,16 +29,16 @@ class WebServer:
 
                 print(header[0])
 
-                data = "HTTP/1.1 200 OK\n"
-                data += "Content-Type: text/html ; charset=utf-8\n"
-                data += "\n"
-                data += "<html><body>Doğukanın aq</body> </html>\n"
+                resp_message = "HTTP/1.1 200 OK\n"
+                resp_message += "Content-Type: text/html ; charset=utf-8\n"
+                resp_message += "\n"
+                resp_message += "<html><body>Doğukanın aq</body> </html>\n"
 
-                connection.sendall(data.encode())
+                connection.sendall(resp_message.encode())
                 connection.shutdown(socket.SHUT_WR) 
 
         except IOError as e:
-        
+    
             pass
 
     def run_server(self ,ip_adress , port):
