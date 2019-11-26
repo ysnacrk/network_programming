@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import socket
 import sys
 from threading import Thread
@@ -21,7 +24,7 @@ client_list  = []
 
 def thread_func(connection , adress):
     
-    connection.send("Welcome to this chatroom!".encode("utf8")) 
+    connection.send("Welcome to this chatroom!".encode("utf-8")) 
     while True:
         data = connection.recv(1024)
         if data:
@@ -32,7 +35,7 @@ def thread_func(connection , adress):
 
 def send_function(data , connection):
     for client in client_list:
-        client.send(data.encode("utf8"))
+        client.send(data.encode("utf-8"))
 
 while True:
     
