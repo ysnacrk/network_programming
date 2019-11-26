@@ -32,7 +32,7 @@ class WebServer:
                 resp_message = "HTTP/1.1 200 OK\n"
                 resp_message += "Content-Type: text/html ; charset=utf-8\n"
                 resp_message += "\n"
-                resp_message += "<html><body>Doğukanın aq</body> </html>\n"
+                resp_message += "<html><body>Server on fire !!!</body> </html>\n"
 
                 connection.sendall(resp_message.encode())
                 connection.shutdown(socket.SHUT_WR) 
