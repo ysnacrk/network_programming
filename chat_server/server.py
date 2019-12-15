@@ -19,36 +19,19 @@ PORT = 12345
 
 server.bind((IP, PORT)) 
 
-server.listen(4) 
-client_list  = []
-
-def thread_func(connection , adress):
-    
-    connection.send("Welcome to this chatroom!".encode("utf-8")) 
-    while True:
-        data = connection.recv(1024)
-        if data:
-            print(str(data))
-            message = str(data)
-            send_function(message , connection)
-
-
-def send_function(data , connection):
-    for client in client_list:
-        client.send(data.encode("utf-8"))
+server.listen(1) 
 
 while True:
     
-    #burada yeni bir thread oluşturmamız gerekiyor
     connection , adress = server.accept()
-    
-    #bu listeyi sürekli kontrol etmemiz gerekiyor
-    client_list.append(connection)
-    
-    print(adress[0] + " bağlandı")
 
-    thread = Thread(target=thread_func , args=(connection , adress))
-    thread.start()
+    while True:
+        sendData=input("Mesaj :")
+        connection.send(str.encode(sendData))
+        data = connection.recv(1024)
+        if data:
+            print(data.decode())
+    
 
 
 

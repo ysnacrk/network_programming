@@ -16,7 +16,7 @@ client.connect((host , port))
 
 while True:
     time.sleep(0.5)
-    client.sendall(bytes(host , 'utf-8'))
+    client.sendall(str.encode(host))
     print(client.recv(1024))
 
 

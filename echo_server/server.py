@@ -25,6 +25,7 @@ while True:
     """
 
     connection , adress = server.accept()
+    print("Connected ", adress)
     
     while True:
         data = connection.recv(1024)
